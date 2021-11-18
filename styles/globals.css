@@ -1,16 +1,41 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.embla {
+overflow: hidden;
+}
+.embla__container {
+display: flex;
+}
+.embla__slide {
+position: relative;
+flex: 0 0 100%;
+}
+a {text-decoration: none;}
+a.nav:link    {text-decoration: none; }
+a.nav:visited {text-decoration: none; }
+a.nav:hover   {text-decoration: none; }
+a.nav:active  {text-decoration: none; }
+body{
+    background: linear-gradient(
+              rgba(0, 0, 0, 0.856),
+              rgba(0, 0, 0, 0.4)
+            ),
+            url(/images/fire.jpg);
+            background-attachment: fixed;
+}
+html {
+  scroll-behavior: smooth;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.color-bg-noir{
+  background: rgb(19, 19, 19);
 }
 
-* {
-  box-sizing: border-box;
+.color-bg-gris{
+  background: rgb(43, 43, 43);
+}
+
+.color-bg-mid{
+  background: rgb(10, 10, 10);
 }
