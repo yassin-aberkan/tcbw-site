@@ -1,16 +1,17 @@
 import React, { useState } from "react";
-
+import toast from 'react-simple-toasts';
 export default function sendMail({}) {
 
+  const msg = ["Ces informations sont importantes pour qu'on puisse vous recontacter.", "Erreur, veuillez remplir tous les champs"];
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
-
+  const [text, setText] = useState(msg[0]);
+  let isValid = true;
   const handleValidation = () => {
     let tempErrors = {};
-    let isValid = true;
 
     if (firstName.length <= 0) {
       tempErrors["firstName"] = true;
@@ -34,35 +35,40 @@ export default function sendMail({}) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
     let isValidForm = handleValidation();
-
     if (isValidForm) {
-    const res = await fetch("/api/sendgrid", {
-      body: JSON.stringify({
-        email: email,
-        fullname: firstName+" "+lastName,
-        phone: phone,
-        subject: "Demande "+firstName+" "+lastName,
-        message: message,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-    });
-
-    const { error } = await res.json();
-    if (error) {
-      console.log(error, "error");
-      return;
-    } else {
-      setFirstName("");
-      setLastName("");
-      setEmail("");
-      setPhone("");
-      setMessage("");
-    }
-  }
+      const res = await fetch("/api/sendgrid", {
+        body: JSON.stringify({
+          email: email,
+          fullname: firstName+" "+lastName,
+          phone: phone,
+          subject: "Demande "+firstName+" "+lastName,
+          message: message,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+      });
+      const { error } = await res.json();
+      if (error) {
+        console.log(error, "error");
+        setText(msg[1]);
+        return;
+        } else {
+          setText(msg[0]);
+          setFirstName("");
+          setLastName("");
+          setEmail("");
+          setPhone("");
+          setMessage("");
+          toast('Message envoyé !');
+        }
+      } else {
+        setText(msg[1]);
+      }
+    
   };
 
   return (
@@ -136,9 +142,9 @@ export default function sendMail({}) {
               placeHolder="+32 488 XXX XXX"
               type="text"
             ></input>
-            <p className="text-gray-400 text-xs italic">
-              Ces informations sont importantes pour qu&lsquo;on puisse vous recontacter.
-            </p>
+            <p className={`text-xs italic ${text[0]=='C' ? "text-gray-400" : "text-red-400"}`}>
+              {text}
+            </p> 
           </div>
         </div>
         <div className="flex flex-wrap -mx-3 mb-6">

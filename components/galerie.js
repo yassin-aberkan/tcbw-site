@@ -32,7 +32,7 @@ export default function galerie({}) {
     {infos.map((info) => (
             <div key={info.name} className="pt-2">
               <img
-                className="image mt-10"
+                className="image mt-2 md:mt-10"
                 src={info.image}
                 alt={info.image + "image"}
               />

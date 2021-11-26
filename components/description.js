@@ -22,7 +22,7 @@ export default function description({}) {
                       </p>
                     </dt>
                     <dd className="text-base text-gray-200">
-                      S’emparer d’une situation de décrochage scolaire en amont.
+                      Bien plus de 10 années d expérience dans ce domaine
                     </dd>
                   </dl>
                   <dl className="mb-10">
@@ -32,7 +32,7 @@ export default function description({}) {
                       </p>
                     </dt>
                     <dd className="text-base text-gray-200">
-                    Soutenir les jeunes pour que qualification et épanouissement s’associent.
+                    Chez TCBW, nos services proposés sont effectué avec soins et qualité.
                     </dd>
                   </dl>
                   <dl className="mb-10">
@@ -42,7 +42,7 @@ export default function description({}) {
                       </p>
                     </dt>
                     <dd className="text-base text-gray-200">
-                    Consensus	Privilégier le consensus aux conflits quelle que soit la situation.
+                   Toutes nos interventions sont faites avec professionalisme. Que ce soit pour le travail ou pour vous.
                     </dd>
                   </dl>
                   <dl className="mb-10">
@@ -52,7 +52,7 @@ export default function description({}) {
                       </p>
                     </dt>
                     <dd className="text-base text-gray-200">
-                    Importance du milieu dans la prise en charge de la situation de décrochage.
+                    Nous nous adaptons a vos critères.
                     </dd>
                   </dl>
                 </div>

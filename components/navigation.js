@@ -29,7 +29,7 @@ export default function Navigation() {
               
           </div>
           <div className="-mr-2 -my-2 md:hidden 2xl:visible">
-            <Popover.Button className=" rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none">
+            <Popover.Button className=" rounded-md p-2 inline-flex items-center justify-center text-gray-100 hover:text-black hover:bg-gray-600 focus:outline-none">
               <span className="sr-only">Open menu</span>
               <MenuIcon className="h-6 w-6" aria-hidden="true" />
             </Popover.Button>
@@ -86,38 +86,39 @@ export default function Navigation() {
           focus
           className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
         >
-          <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
+          <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 color-bg-mid divide-y-2 divide-yellow-800">
             <div className="pt-5 pb-6 px-5">
               <div className="flex items-center justify-between">
-                <div>
-
+              <a href="#">
+                <span className="sr-only">Workflow</span>
+                <div className="text-base font-medium text-white hover:text-white">
+                  <span  className="text-xl">TC </span><span className="text-md">Bruxelles - Wallonie</span>
                 </div>
-                <div className="-mr-2">
-                  <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none">
+              </a>
+                <div className="">
+                  <Popover.Button className="bg-black rounded-md p-2 inline-flex items-center justify-center text-gray-100 hover:text-gray-black hover:bg-gray-600 focus:outline-none">
                     <span className="sr-only">Close menu</span>
                     <XIcon className="h-6 w-6" aria-hidden="true" />
                   </Popover.Button>
                 </div>
               </div>
-              <div className="mt-6">
-              </div>
             </div>
             <div className="py-6 px-5 space-y-6">
-              <div className="grid grid-cols-2 gap-y-4 gap-x-8">
+              <div className="grid grid-cols-1 gap-y-4 gap-x-8">
                 <Link href="/">
-                  <a className="text-base font-medium text-gray-500 hover:text-gray-900 no-underline">
+                  <a className="text-base font-medium text-gray-100 hover:text-gray-400 no-underline">
                     Accueil
                   </a>
                 </Link>
-                <Link href="/a-propos">
+                <Link href="/about">
                 <a
-                  className="text-base font-medium text-gray-500 hover:text-gray-900"
+                  className="text-base font-medium text-gray-100 hover:text-gray-400"
                 >
                   À propos
                 </a>
                 </Link>
                 <Link href="/contact">
-                  <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+                  <a className="text-base font-medium text-gray-100 hover:text-gray-400">
                     Contact
                   </a>
                 </Link>

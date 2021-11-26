@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function footer({}) {
   return (
     <div className="text-center z-50">
@@ -15,15 +16,23 @@ export default function footer({}) {
             <span className="text-gray-400">TCBW © 2021</span>
             <div className="flex mt-4 md:m-0">
               <div className="-mx-4">
-                <a href="#" className="px-4 text-sm text-white">
-                  Accueil
-                </a>
-                <a href="#" className="px-4 text-sm text-white">
-                À propos
-                </a>
-                <a href="#" className="px-4 text-sm text-white">
-                  Contact
-                </a>
+                <Link href="/">
+                  <a href="#" className="px-4 text-sm text-white">
+                    Accueil
+                  </a>
+                </Link>
+
+                <Link href="/abi=uut">
+                  <a className="px-4 text-sm text-white">
+                  À propos
+                  </a>
+                </Link>
+
+                <Link href="/contact">
+                  <a className="px-4 text-sm text-white">
+                    Contact
+                  </a>
+                </Link>
               </div>
             </div>
           </div>

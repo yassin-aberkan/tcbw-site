@@ -33,9 +33,13 @@ html {
 }
 
 .color-bg-gris{
-  background: rgb(43, 43, 43);
+  background: rgb(30, 30, 30);
 }
 
 .color-bg-mid{
   background: rgb(10, 10, 10);
+}
+
+.blur-bg{
+  backdrop-filter: blur(10px) brightness(40%);
 }
