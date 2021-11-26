@@ -5,8 +5,12 @@ import {
   FaBroom,
   FaFire
 } from "react-icons/fa";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
-export default function services({}) {
+export default function services() {
+  
     const infos = [
       {
         name: "Chaudière",
@@ -42,6 +46,10 @@ export default function services({}) {
         },
 
     ];
+
+    useEffect(() => {
+      Aos.init({duration:2000});
+    }, []);
   
     return (
       <div id="service_section" className="">
@@ -56,7 +64,7 @@ export default function services({}) {
             <div className="grid gap-6 mt-10 md:grid-cols-3 lg:grid-cols-{{in}} mb-24 justify-center">
             {infos.map((info) => (
               
-              <div key={info.name}  className="px-6 py-8 overflow-hidden color-bg-gris rounded-md shadow-md">
+              <div key={info.name} data-aos="fade-up"  className="px-6 py-8 overflow-hidden color-bg-gris rounded-md shadow-md">
               
                 <h2 className="text-xl font-medium text-white flex justify-center space-x-3">
                 <info.image

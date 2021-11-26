@@ -5,7 +5,7 @@ import Description from "../components/description";
 export default function About() {
   return (
     <div className="">
-      <Layout className="landingOther" page="Be Formation - Accueil">
+      <Layout className="landingOther" page="TCBW - A-Propos">
         <div className="">
           <div className="">
           <section className="text-gry-300 my-20">

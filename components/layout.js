@@ -8,7 +8,7 @@ export default function Layout({ children, page }) {
     <div className=" text-center">
       <Head>
         <title>{page}</title>
-        <link rel="icon" href="/icon-be-formation.svg" />
+        <link rel="icon" href="/images/icon-tcbw.png" />
       </Head>
 
       <div className="z-50 w-full container-lg space-y-10">

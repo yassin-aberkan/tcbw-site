@@ -1,16 +1,19 @@
-import Head from 'next/head'
-import Image from 'next/image'
 import Layout from "../components/layout";
 import Carousel from "../components/carousel";
 import Services from "../components/services";
 import Galerie from "../components/galerie";
 import SendMail from "../components/send-mail";
-import styles from '../styles/Home.module.css'
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    Aos.init({duration:2000});
+  }, []);
   return (
     <div className="">
-      <Layout className="landingOther" page="Be Formation - Accueil">
+      <Layout className="landingOther" page="TCBW - Accueil">
         <div className="">
         <div className="lg:flex lg:justify-between md:mx-20 md:mt-10 md:mb-10 lg:mb-16">
         <div className="">

@@ -6,7 +6,7 @@ import Information from "../components/information.js";
 export default function Contact() {
   return (
     <div className="">
-      <Layout className="landingOther" page="Be Formation - Accueil">
+      <Layout className="landingOther" page="TCBW - Contact">
         <div className="">
           <section className="text-gry-300 my-20">
             <div className="container flex flex-col items-center px-5 mx-auto md:flex-row lg:px-28">

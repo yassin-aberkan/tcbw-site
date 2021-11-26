@@ -1,8 +1,12 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import {
     FaMapMarkedAlt,
     FaPhoneAlt,
     FaEnvelope,
   } from "react-icons/fa";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 export default function information({}) {
     const infos = [
@@ -26,6 +30,10 @@ export default function information({}) {
         },
 
     ];
+
+    useEffect(() => {
+      Aos.init({duration:1000});
+    }, []);
   
     return (
       <div id="service_section" className="">
@@ -35,7 +43,7 @@ export default function information({}) {
             <div className="pt-4 md:grid-cols-3 lg:grid-cols-{{in}} pb-10 justify-center ">
             {infos.map((info) => (
               
-              <div key={info.name}  className="px-6 py-3 mb-3 overflow-hidden blur-bg rounded-md shadow-md">
+              <div key={info.name} data-aos="fade-left" className="px-6 py-3 mb-3 overflow-hidden blur-bg rounded-md shadow-md">
                 <h2 className=" font-medium text-white flex space-x-3 justify-start">
                 <info.image
                 className="flex-shrink-0 h-6 w-6 text-whitehover:text-gray-300"
