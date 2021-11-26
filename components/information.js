@@ -41,7 +41,7 @@ export default function information({}) {
                 className="flex-shrink-0 h-6 w-6 text-whitehover:text-gray-300"
                 aria-hidden="true"></info.image>
                 <span className="">{info.name}</span>
-                <p className="max-w-md text-gray-300 text-xs md:text-base md:mt-0 mt-1">
+                <p className="max-w-md text-gray-300 text-sm md:text-base md:mt-0 mt-1">
                   {info.description}
                 </p>
                 </h2>

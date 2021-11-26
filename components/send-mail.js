@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState } from "react";
 import toast from 'react-simple-toasts';
 export default function sendMail({}) {
@@ -90,7 +91,7 @@ export default function sendMail({}) {
               type="text"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value) } 
-              placeHolder="Jane"
+              placeholder="Jane"
             ></input>
           </div>
 
@@ -107,7 +108,7 @@ export default function sendMail({}) {
               type="text"
               value={lastName}
               onChange={(e) => setLastName(e.target.value) } 
-              placeHolder="Doe"
+              placeholder="Doe"
             ></input>
           </div>
         </div>
@@ -125,7 +126,7 @@ export default function sendMail({}) {
               id="email"
               type="email"
               value={email}
-              placeHolder="nom@gmail.com"
+              placeholder="nom@gmail.com"
               onChange={(e) => setEmail(e.target.value) }
             ></input>
 
@@ -139,7 +140,7 @@ export default function sendMail({}) {
               className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               onChange={(e) => setPhone(e.target.value) }
               value={phone}
-              placeHolder="+32 488 XXX XXX"
+              placeholder="+32 488 XXX XXX"
               type="text"
             ></input>
             <p className={`text-xs italic ${text[0]=='C' ? "text-gray-400" : "text-red-400"}`}>

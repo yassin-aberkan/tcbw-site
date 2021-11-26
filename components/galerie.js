@@ -28,7 +28,7 @@ export default function galerie({}) {
   return (
     <div className="pt-10 color-bg-mid">
 <span className="sm:text-5xl text-4xl font-extrabold text-gray-100 text-center">Voyez par vous-même !</span>
-    <Carousel showArrows={false} showStatus={false} showThumbs={false} infiniteLoop={true} autoPlay={true} interval={4000}>
+    <Carousel showArrows={false} showStatus={false} showThumbs={false} infiniteLoop={true} autoPlay={true} interval={4000} swipeable={false}>
     {infos.map((info) => (
             <div key={info.name} className="pt-2">
               <img
