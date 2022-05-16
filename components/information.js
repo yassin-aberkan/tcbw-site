@@ -32,7 +32,7 @@ export default function information({}) {
     ];
 
     useEffect(() => {
-      Aos.init({duration:1000});
+      Aos.init({duration:100});
     }, []);
   
     return (
@@ -40,7 +40,7 @@ export default function information({}) {
         <section className="">
           <div className="max-w-5xl mx-auto">
 
-            <div className="pt-4 md:grid-cols-3 lg:grid-cols-{{in}} pb-10 justify-center ">
+            <div className="pt-4 md:grid-cols-3 lg:grid-cols-{{in}} justify-center ">
             {infos.map((info) => (
               
               <div key={info.name} data-aos="fade-top" className="px-6 py-3 mb-3 overflow-hidden blur-bg rounded-md shadow-md">

@@ -7,13 +7,13 @@ sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 async function sendEmail(req, res) {
   try {
     console.log("REQ.BODY", req.body);
-    
+
     await sendgrid.send({
-      to: "yassberjan@gmail.com", // Your email where you'll receive emails
+      to: "infos@tcbw.be", // Your email where you'll receive emails
       from: "demande@tcbw.be", // your website email address here
       subject: `[Depuis le site internet] : ${req.body.subject}`,
       html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//FR">
-      <html lang="en">
+      <html lang="fr">
       <head>
         <meta charset="utf-8">
       
@@ -28,16 +28,29 @@ async function sendEmail(req, res) {
       
       <body>
         <div class="img-container" style="display: flex;justify-content: center;align-items: center;border-radius: 5px;overflow: hidden; font-family: 'helvetica', 'ui-sans';">              
-              </div>
+          </div>
               <div class="container" style="margin-left: 20px;margin-right: 20px;">
-              
-              <h3>Vous avez un nouveau mail de ${req.body.fullname}, son mail est: ✉️${req.body.email} </h3>
+                <div style=" background-color: rgb(25, 25, 25);
+                  padding: 10px;
+                  color: white;
+                  font-family: 'Arial', 'Helvetica', 'sans-serif';">
+
+                  <span style="font-weight: bold">Prénom, Nom :</span>
+                  ${req.body.fullname}<br />
+    
+                  <span style="font-weight: bold">Mail :</span>
+                  ${req.body.email}<br />
+    
+                  <span style="font-weight: bold">Numéro de téléphone :</span>
+                  ${req.body.phone}<br />
+                </div>
+
               <div style="font-size: 16px;">
-              <p>Message:</p>
-              <p>${req.body.message}</p>
-              <br>
+                <p>${req.body.message}</p>
+                <br>
               </div>
-              </div>
+              <p>Envoyé le ${req.body.date}</p>
+          </div>
       </body>
       </html>`,
     });
@@ -46,7 +59,7 @@ async function sendEmail(req, res) {
     return res.status(error.statusCode || 500).json({ error: error.message });
   }
 
-  console.log("succes")
+  console.log("succes");
   return res.status(200).json({ error: "" });
 }
 

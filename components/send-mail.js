@@ -7,6 +7,7 @@ export default function sendMail({}) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
+  const [spam, setSpam] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [text, setText] = useState(msg[0]);
@@ -31,6 +32,11 @@ export default function sendMail({}) {
       isValid = false;
     }
 
+    if (spam.length > 0) {
+      tempErrors["spam"] = true;
+      isValid = false;
+    }
+
     return isValid;
   };
 
@@ -38,6 +44,8 @@ export default function sendMail({}) {
     e.preventDefault();
     
     let isValidForm = handleValidation();
+    const event = new Date();
+    const options = {year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric'};
     if (isValidForm) {
       const res = await fetch("/api/sendgrid", {
         body: JSON.stringify({
@@ -45,7 +53,8 @@ export default function sendMail({}) {
           fullname: firstName+" "+lastName,
           phone: phone,
           subject: "Demande "+firstName+" "+lastName,
-          message: message,
+          message: message.replaceAll('\n',' </br>'),
+          date: event.toLocaleDateString('fr-FR', options),
         }),
         headers: {
           "Content-Type": "application/json",
@@ -74,7 +83,10 @@ export default function sendMail({}) {
 
   return (
     <div id="contact_section" className="color-bg-gris pt-10">
-    <span className="sm:text-5xl text-4xl font-extrabold text-gray-100 text-center ">Nous Contactez</span>
+    <div className="sm:text-5xl text-4xl font-extrabold text-gray-100 text-center ">Nous Contactez</div>
+    <div className="text-base mt-5 mx-3 text-gray-100 text-center ">
+    Des questions ? Un besoin d’information ? <br></br> Remplissez le formulaire et vous serez contacté immédiatement par notre responsable clientèle.
+    </div>
       <form className="max-w-2xl mx-auto px-10  md:rounded-2xl ">
       
         <div className="flex flex-wrap my-5 mt-10">
@@ -123,11 +135,20 @@ export default function sendMail({}) {
             </label>
             <input
               className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="email"
+              id="email2"
               type="email"
               value={email}
               placeholder="nom@gmail.com"
               onChange={(e) => setEmail(e.target.value) }
+            ></input>
+
+            <input
+              className="invisible"
+              id="email"
+              type="email"
+              value={spam}
+              placeholder="nom@gmail.com"
+              onChange={(e) => setSpam(e.target.value) }
             ></input>
 
             <label
@@ -158,7 +179,7 @@ export default function sendMail({}) {
             </label>
             <textarea
               className=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none"
-              onChange={(e) => setMessage(e.target.value)}
+              onChange={(e) => (e)?.nativeEvent?.inputType === 'insertLineBreak'?setMessage(message+'\n'):setMessage(e.target.value)}
               value={message}
               id="message"
             ></textarea>

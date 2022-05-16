@@ -5,12 +5,12 @@ import Information from "../components/information.js";
 
 export default function Contact() {
   return (
-    <div className="">
+    <div className="fire-bg">
       <Layout className="landingOther" page="TCBW - Contact">
         <div className="">
-          <section className="text-gry-300 my-20">
+          <section className="text-gry-300 my-12 md:my-20">
             <div className="container flex flex-col items-center px-5 mx-auto md:flex-row lg:px-28">
-              <div className="flex flex-col items-start mb-16 text-left lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 md:mb-0">
+              <div className="flex flex-col items-start mb-8 text-left lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 md:mb-0">
                 <h2 className="mb-8 text-xs font-semibold tracking-widest text-gray-300 uppercase title-font">
                   {" "}
                   TCBW{" "}

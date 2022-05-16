@@ -2,7 +2,7 @@ import Link from "next/link";
 export default function footer({}) {
   return (
     <div className="text-center z-50">
-      <div className=" footer-height flex justify-center px-4 text-gray-100 bg-black bg-opacity-75 ">
+      <div className=" footer-height flex justify-center px-4 text-gray-100 bg-black">
         <div className="container py-6">
 
         
@@ -22,7 +22,7 @@ export default function footer({}) {
                   </a>
                 </Link>
 
-                <Link href="/abi=uut">
+                <Link href="/about">
                   <a className="px-4 text-sm text-white">
                   À propos
                   </a>

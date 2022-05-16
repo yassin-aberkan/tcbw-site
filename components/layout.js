@@ -5,7 +5,7 @@ import MyFooter from "./footer";
 
 export default function Layout({ children, page }) {
   return (
-    <div className=" text-center">
+    <div className=" text-center font-myfont">
       <Head>
         <title>{page}</title>
         <link rel="icon" href="/images/icon-tcbw.png" />

@@ -12,37 +12,38 @@ export default function Home() {
     Aos.init({duration:2000});
   }, []);
   return (
-    <div className="">
+    <div className="fire-bg">
       <Layout className="landingOther" page="TCBW - Accueil">
         <div className="">
-        <div className="lg:flex lg:justify-between md:mx-20 md:mt-10 md:mb-10 lg:mb-16">
-        <div className="">
-        <div className="max-w-7xl py-50 lg:py-40 text-left lg:items-center lg:justify-between min-w-100 md:mx-0 mx-5 mb-10 lg:mb-0 mt-10 sm:mt-0 widths">
-        <h2 className="text-3xl font-extrabold font-semibold tracking-tight text-white ml-2">
-          <span className="block sm:text-5xl mb-2">TCBW</span>
-          <span className="block text-yellow-500 sm:text-4xl">Votre comfort, Notre priorité</span>
-        </h2>
-        <div className=" flex lg:mt-0 lg:flex-shrink-0 pt-5">
-          <div className="inline-flex rounded-md shadow">
-            <a
-              href="#contact_section"
-              className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-yellow-600 hover:bg-yellow-600"
-            >
-              Contactez-Nous
-            </a>
+        <div className="lg:mx-12 md:mt-12 sm:mb-10 lg:mb-12">
+        <div className="container mx-auto lg:flex lg:flex-row">
+          <div className="my-20 md:text-left basis-1/2 w-11/12 md:mr-12">
+            <h2 className="tracking-tight text-white ml-2">
+              <span className="block text-5xl sm:text-6xl mb-2 font-bold text-yellow-500">Chauffagiste</span>
+              <span className="block text-5xl sm:text-6xl mb-2 font-bold text-yellow-500">Plomberie</span>
+              <span className="block text-gray-300 text-md sm:text-lg font-light mt-4">TC BW, c’est une équipe de techniciens diplômés et spécialisés en plomberie-chauffage.</span>
+            </h2>
+            <div className="mt-6">
+              <div className="inline-flex rounded-md shadow transform hover:scale-110 duration-300">
+                <a
+                  href="#contact_section"
+                  className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-yellow-600 hover:bg-yellow-600"
+                >
+                  Contactez-Nous
+                </a>
+              </div>
+              <div className="ml-3 inline-flex rounded-md shadow transform hover:scale-110 duration-300">
+                <a
+                  href="#service_section"
+                  className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-yellow-600 bg-white hover:bg-indigo-50"
+                >
+                  Information
+                </a>
+              </div>
+            </div>
           </div>
-          <div className="ml-3 inline-flex rounded-md shadow">
-            <a
-              href="#service_section"
-              className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-yellow-600 bg-white hover:bg-indigo-50"
-            >
-              Information
-            </a>
-          </div>
+          <Carousel className="basis-1/2"></Carousel>
         </div>
-      </div>
-        </div>
-        <Carousel className=""></Carousel>
         </div>
         <div className="color-bg-noir px-1">
         <Services></Services>

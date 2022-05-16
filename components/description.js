@@ -1,7 +1,7 @@
 export default function description({}) {
     return (
       <div className="color-bg-noir">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-6xl mx-auto">
             <div className=" sm:mx-20 mx-10">
             <div className="py-10 color-bg-noir">
               <div className="max-w-7xl">
@@ -25,7 +25,7 @@ export default function description({}) {
                       Bien plus de 10 années d expérience dans ce domaine
                     </dd>
                   </dl>
-                  <dl className="mb-10">
+                  <dl className="mb-10 md:ml-10">
                     <dt>
                       <p className="text-lg leading-6 font-medium text-gray-100">
                       Savoir-faire
@@ -45,7 +45,7 @@ export default function description({}) {
                    Toutes nos interventions sont faites avec professionalisme. Que ce soit pour le travail ou pour vous.
                     </dd>
                   </dl>
-                  <dl className="mb-10">
+                  <dl className="mb-10 md:ml-10">
                     <dt>
                       <p className="text-lg leading-6 font-medium text-gray-100">
                       Flexibilité
@@ -65,8 +65,8 @@ export default function description({}) {
             </h2>
             <p className="mt-4 text-gray-200 text-left">
             TC-BW est une entreprise spécialisée dans les services de chauffage et de plomberie pour les particuliers et les entreprises.
-
-Chez TC BW, nous mettons à votre disposition notre expérience, notre savoir-faire et notre professionnalisme. Nous réalisons des projets de chauffage et de plomberie et effectuons des dépannages urgents en région bruxelloise, région wallonne et région flamande.
+            Chez TC BW, nous mettons à votre disposition notre expérience, notre savoir-faire et notre professionnalisme.
+            <br></br><br></br>Nous réalisons des projets de chauffage et de plomberie et effectuons des dépannages urgents en région bruxelloise, région wallonne et région flamande.
             </p>
             <p className="mt-4 text-gray-200 text-left pb-14">
             TC BW, c’est une équipe de techniciens diplômés et spécialisés en plomberie-chauffage.

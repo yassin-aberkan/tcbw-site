@@ -46,7 +46,7 @@ export default function carousel({}) {
 
       <style jsx>{`
         .image {
-          height: 50vh;
+          height: 500px;
           object-fit: cover;
           filter: brightness(70%);
         }
